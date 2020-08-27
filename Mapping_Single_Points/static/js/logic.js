@@ -19,15 +19,15 @@ let map = L.map('mapid').setView([40.7, -94.5], 4);
 // L.circle([34.0522, -118.2437], {
 	// radius: 1000
 //  }).addTo(map);
-L.circle([37.354107, -121.955238], {
-	radius: 30000,
-	color: "black",
-	fillcolor: '#ffffa1'
-}).addTo(map);
+// L.circle([37.354107, -121.955238], {
+// 	radius: 30000, //This is meters
+// 	color: "black",
+// 	fillColor: '#ffffa1'
+// }).addTo(map);
 L.circleMarker([34.0522, -118.2437], {
-	radius: 30000,
+	radius: 30, //This is pixels
 	color: "black",
-	fillcolor: '#ffffa1'
+	fillColor: '#ffffa1'
 }).addTo(map);
  
 // We create the tile layer that will be the background of our map.
