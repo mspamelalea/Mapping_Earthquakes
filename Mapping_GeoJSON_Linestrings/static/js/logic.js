@@ -35,8 +35,8 @@ let torontoData = "https://raw.githubusercontent.com/mspamelalea/Mapping_Earthqu
 //      L.geoJson( file ,  { style: elevation950Style } ).addTo(map);
 //   });
 var lineStyle = {
-  color : "yellow",
-  fillColor : "yellow",
+  color : "#ffffa1",
+
   opacity : 0.4,
   weight : 2,
   };
