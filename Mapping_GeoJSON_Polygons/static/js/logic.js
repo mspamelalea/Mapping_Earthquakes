@@ -14,18 +14,30 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 	maxZoom: 18,
 	accessToken: API_KEY
 });
+// Create a base layer that holds the maps
+let baseMaps = {
+	"Streets": streets,
+	"Satellite Streets": satelliteStreets
+};
 
 // Create the map object with center, zoom level and default layer.
-let baseMaps = L.map('mapid', {
+let map = L.map('mapid', {
 	center: [43.7, -79.3],
 	zoom: 11,
     layers: [satelliteStreets]
 });
-// Accessing the Toronto airline routes GeoJSON URL.
+
 // Accessing the Toronto neighborhoods GeoJSON URL.
 let torontoHoods = "https://raw.githubusercontent.com/mspamelalea/Mapping_Earthquakes/master/torontoNeighborhoods.json";
 
 // Grabbing our GeoJSON data.
 d3.json(torontoHoods).then(function(data) {
-   L.geoJson(data).addTo(map);
+   L.geoJson(data,{
+	   color:"blue",
+	   fillcolor: "yellow",
+	   weight: 2, 
+	   onEachFeature: function(feature, layer) {
+		   layer.bindPopup("<h3>Neighborhood: " + feature.properties.AREA_NAME + "</h3>");
+	   }
+   }).addTo(map);
 });
