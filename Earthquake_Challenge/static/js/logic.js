@@ -160,7 +160,6 @@ let plateData = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/
 
 var plateStyle = {
     color : "red",
-  
     opacity : 0.4,
     weight : 4,
     };
