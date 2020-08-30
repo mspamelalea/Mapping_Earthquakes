@@ -58,4 +58,3 @@ let baseMaps = {
 
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
-
